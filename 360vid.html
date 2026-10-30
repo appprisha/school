@@ -1,0 +1,21 @@
+<body> <button id="playBtn">Play 360 Video</button>
+<a-scene>
+<a-assets>
+<video id="video360" src="360.mp4" preload="auto" crossorigin="anonymous"
+playsinlinewebkit-playsinline></video>
+</a-assets>
+<!-360 Video Sphere -->
+<a-videosphere src="#video360" rotation="0-90 0">
+</a-videosphere>
+</a-scene>
+<script>
+const video = document.getElementById("video360");
+document.getElementById("playBtn").addEventListener("click", async() =>
+try {
+await video.play();
+console.log("360 video is playing");
+} catch (err) {
+console.error(err);
+} });
+</script>
+</body>
